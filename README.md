@@ -242,21 +242,6 @@ bash scripts/run_deflection_experiments.sh
 python scripts/generate_confusion_matrix.py --run_dir runs/2026_01_13_11_56_25_multi_key_5vendors_v2
 ```
 
-#### 实验 4: 数据汇总与可视化 (成员 D)
-
-**汇总所有实验结果**：
-```bash
-# 收集所有 log.csv 文件
-find runs/ -name "log.csv" -exec cat {} \; > all_results.csv
-
-# 生成可视化图表（需要自定义脚本）
-python scripts/generate_plots.py --input all_results.csv --output figures/
-```
-
-**生成技术报告**：
-- 中文报告：`docs/Identifiability_CN.md`
-- 英文报告：`docs/Identifiability_EN.md`
-
 ## 项目结构
 
 ```
@@ -274,13 +259,6 @@ DualBand-RingID/
 │   ├── key_capacity_test.py    # 成员 B: 密钥容量测试
 │   ├── run_deflection_experiments.sh  # 成员 B: PAI 偏转批量实验
 │   ├── generate_confusion_matrix.py   # 成员 B: 混淆矩阵生成
-│   └── generate_plots.py       # 成员 D: 数据可视化脚本
-├── docs/
-│   ├── Identifiability_CN.md   # 成员 D: 中文技术报告
-│   └── Identifiability_EN.md   # 成员 D: 英文技术报告
-├── 生成模型基础报告/
-│   ├── main.tex                # 成员 D: LaTeX 报告源文件
-│   └── picture/                # 成员 D: 报告图表
 ├── runs/                       # 实验结果目录
 │   ├── frequency_band_comparison/  # 频段对比结果
 │   ├── key_capacity_test/          # 容量测试结果
@@ -350,28 +328,6 @@ RingID 使用 DDIM 逆向 + 频域相似度匹配：
     ↓
 报告撰写 (Markdown + LaTeX)
 ```
-
-## 文档与报告
-
-### 技术报告
-- [中文技术报告](docs/Identifiability_CN.md) - 详细的实验设计与结果分析
-- [English Technical Report](docs/Identifiability_EN.md) - Detailed experimental design and analysis
-- [LaTeX 报告源文件](生成模型基础报告/main.tex) - 学术论文格式报告
-
-### 实验数据
-所有实验结果保存在 `runs/` 目录下，包括：
-- 原始日志文件 (`log.csv`)
-- 混淆矩阵图像
-- 可视化曲线图
-- 统计分析结果
-
-### 报告图表 (成员 D)
-`生成模型基础报告/picture/` 目录包含所有报告图表：
-- 频段对比图 (D1-D6)
-- 容量测试曲线 (L1-L6)
-- PAI 偏转效果图 (H1-H6)
-- 质量评估对比 (O1-O6, P1-P3)
-- 混淆矩阵 (confusion_matrix.png)
 
 ## 引用
 
